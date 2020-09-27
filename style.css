@@ -1,0 +1,27 @@
+body{
+    position: relative;
+    min-height: 750px;
+}
+.surat {
+    margin-top: 50px;
+}
+
+.acak-btn{
+    margin-top: 160px;
+}
+
+footer{
+    font-size: 0.7rem;
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0px;
+    margin: 0 auto !important;
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 992px) { 
+    body{
+        min-height: 650px;
+    }
+ }
