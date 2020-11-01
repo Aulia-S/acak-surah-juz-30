@@ -1,202 +1,13 @@
-// const data =[
-//   {
-//     id : 114,
-//     name : 'An-Nas',
-//     ayat : 6
-//   },
-//   {
-//     id : 113,
-//     name : 'Al-Falaq',
-//     ayat : 5
-//   },
-//   {
-//     id : 112,
-//     name : 'Al-Ikhlas',
-//     ayat : 4
-//   },
-//   {
-//     id : 111,
-//     name : 'Al-Lahab',
-//     ayat : 5
-//   },
-//   {
-//     id : 110,
-//     name : 'An-Nasr',
-//     ayat : 3
-//   },
-//   {
-//     id : 109,
-//     name : 'Al-Kafirun',
-//     ayat : 6
-//   },
-//   {
-//     id : 108,
-//     name : 'Al-Kautsar',
-//     ayat : 7
-//   },
-//   {
-//     id : 107,
-//     name : 'Al-Ma\'un',
-//     ayat : 7
-//   },
-//   {
-//     id : 106,
-//     name : 'Al-Quraisy',
-//     ayat : 4
-//   },
-//   {
-//     id : 105,
-//     name : 'Al-Fil',
-//     ayat : 5
-//   },
-//   {
-//     id : 104,
-//     name : 'Al-Humazah',
-//     ayat : 9
-//   },
-//   {
-//     id : 103,
-//     name : 'Al-\'Asr',
-//     ayat : 3
-//   },
-//   {
-//     id : 102,
-//     name : 'AT-Takatsur',
-//     ayat : 8
-//   },
-//   {
-//     id : 101,
-//     name : 'Al-Qari\'ah',
-//     ayat : 11
-//   },
-//   {
-//     id : 100,
-//     name : 'Al-\'Adiyat',
-//     ayat : 11
-//   },
-//   {
-//     id : 99,
-//     name : 'Az-Zalzalah',
-//     ayat : 8
-//   },
-//   {
-//     id : 98,
-//     name : 'Al-Bayyinah',
-//     ayat : 8
-//   },
-//   {
-//     id : 97,
-//     name : 'Al-Qadr',
-//     ayat : 5
-//   },
-//   {
-//     id : 96,
-//     name : 'Al-\'Alaq',
-//     ayat : 19
-//   },
-//   {
-//     id : 95,
-//     name : 'At-Tin',
-//     ayat : 8
-//   },
-//   {
-//     id : 94,
-//     name : 'Al-Insyirah',
-//     ayat : 8
-//   },
-//   {
-//     id : 93,
-//     name : 'Ad-Duha',
-//     ayat : 11
-//   },
-//   {
-//     id : 92,
-//     name : 'Al-Lail',
-//     ayat : 21
-//   },
-//   {
-//     id : 91,
-//     name : 'Asy-Syams',
-//     ayat : 15
-//   },
-//   {
-//     id : 90,
-//     name : 'Al-Balad',
-//     ayat : 20
-//   },
-//   {
-//     id : 89,
-//     name : 'Al-Fajr',
-//     ayat : 30
-//   },
-//   {
-//     id : 88,
-//     name : 'Ad-Ghasyiyah',
-//     ayat : 26
-//   },
-//   {
-//     id : 87,
-//     name : 'Al-A\'la',
-//     ayat : 19
-//   },
-//   {
-//     id : 86,
-//     name : 'At-Thariq',
-//     ayat : 17
-//   },
-//   {
-//     id : 85,
-//     name : 'Al-Buruj',
-//     ayat : 22
-//   },
-//   {
-//     id : 84,
-//     name : 'Al-Insyiqaq',
-//     ayat : 25
-//   },
-//   {
-//     id : 83,
-//     name : 'Al-Muthaffifin',
-//     ayat : 36
-//   },
-//   {
-//     id : 82,
-//     name : 'Al-Infithar',
-//     ayat : 19
-//   },
-//   {
-//     id : 81,
-//     name : 'At-Takwir',
-//     ayat : 29
-//   },
-//   {
-//     id : 80,
-//     name : '\'Abasa',
-//     ayat : 42
-//   },
-//   {
-//     id : 79,
-//     name : 'An-Nazi\'at',
-//     ayat : 46
-//   },
-//   {
-//     id : 78,
-//     name : 'An-Naba\'',
-//     ayat : 40
-//   }
-// ]
-
 const acakBtn = document.querySelector('#acak-btn');
 const suratCont = document.querySelector('.surat');
 let data = [];
 
+//get data
 fetch('data1.json')
-  .then(response => response.json())
-  .then(response => {
-    data = response;
-    console.log(data);
-  });
+  .then(res => res.json())
+  .then(res => data = res);
 
+//display data
 const randomSurah = () => {
   let shuffle = Math.round(Math.random() *  37);
   let surat = `<div class="col">
@@ -205,11 +16,13 @@ const randomSurah = () => {
                 <p class="ayat">${data[shuffle].ayat} ayat</p>
               </div>`;
   suratCont.innerHTML = surat;
+
 }
 
-
-
+//handle click button acak surah
 acakBtn.addEventListener('click' , () => {
     randomSurah();
 });
 
+
+// belajar cara ngefetch dulu baru lanjutin
